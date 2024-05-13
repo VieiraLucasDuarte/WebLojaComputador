@@ -1,6 +1,13 @@
 .navPrincipal {
+    width: 100%;
     display: flex;
     justify-content: center;
+}
+
+.menuBarLateral {
+    width: 20%;
+    display: flex;
+    justify-content: left;
 }
 
 .produtoPrincipal {
