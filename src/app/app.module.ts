@@ -8,6 +8,9 @@ import { HomeComponent } from './home/home/home.component';
 import { NavPrincipalComponent } from './components/nav-principal/nav-principal.component';
 import { ProdutosPrincipalComponent } from './components/produtos-principal/produtos-principal.component';
 import { MenuLateralPrincipal } from './components/menu-lateral-principal/menu-lateral-principal';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @NgModule({
   declarations: [
@@ -15,12 +18,14 @@ import { MenuLateralPrincipal } from './components/menu-lateral-principal/menu-l
     HomeComponent,
     NavPrincipalComponent,
     ProdutosPrincipalComponent,
-    MenuLateralPrincipal
+    MenuLateralPrincipal,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
