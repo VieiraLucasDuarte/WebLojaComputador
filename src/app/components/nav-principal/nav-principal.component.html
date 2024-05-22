@@ -1,45 +1,18 @@
-<!--<header>
-     <nav class="nav-bar">
-        <div class="logo">
-            <h1>Logo</h1>
-        </div>
-        <div class="nav-list">
-            <ul>
-                <li class="nav-item"><input class="pesquisa-input " type="text"><button class="pesquisa-button">Pesquisar</button></li>
-            </ul>
-        </div>
-        <div class="login-button">
-            <button>Carrinho</button>
-        </div>
-    </nav>
-    <div style="background-color: burlywood;">
-        <!-- <div class="nav-list">
-            <ul >
-                <li class="nav-item"><input class="pesquisa-input " type="text"><button class="pesquisa-button">Pesquisar</button></li>
-            </ul>
-        </div> -->
-     <!-- </div> 
-</header>-->
 <div class="body">
-<div class="navbar">
-    <div class="logo">
-        <img src="logo.png" alt="Zappos">
+    <div class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="Zappos">
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search for shoes, clothes, etc.">
+            <button type="submit">Search</button>
+        </div>
+        <div class="cart-signin">
+            <button class="cart-button">My Cart</button>
+            <button class="signin-button">Sign In / Register</button>
+        </div>
     </div>
-    <div class="search-container">
-        <input type="text" placeholder="Search for shoes, clothes, etc.">
-        <button type="submit">Search</button>
+    <div class="menu" >
+        <a href="#" *ngFor="let categoria of categorias">{{categoria.descricao}}</a>
     </div>
-    <div class="cart-signin">
-        <button class="cart-button">My Cart</button>
-        <button class="signin-button">Sign In / Register</button>
-    </div>
-</div>
-<div class="menu">
-    <a href="#">Women</a>
-    <a href="#">Men</a>
-    <a href="#">Kids</a>
-    <a href="#">Departments</a>
-    <a href="#">Brands</a>
-    <a href="#">Sale</a>
-</div>
 </div>
