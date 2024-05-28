@@ -13,13 +13,10 @@
         </div>
     </div>
     <div class="menu" >
-        <mat-form-field>
+        <mat-form-field appearance="fill">
             <mat-label>Panel color</mat-label>
-            <mat-select [formControl]="panelColor"
-                        panelClass="example-panel-{{panelColor.value}}">
+            <mat-select *ngFor="let cat of categorias">
               <mat-option value="red">Red</mat-option>
-              <mat-option value="green">Green</mat-option>
-              <mat-option value="blue">Blue</mat-option>
             </mat-select>
           </mat-form-field>
     </div>

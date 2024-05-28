@@ -25,7 +25,7 @@ export class NavPrincipalComponent implements OnInit {
   }
 
   private getCategoria() {
-    this.mockTeste();
+    // this.mockTeste();
     // this.categoriaService.getCategorias()
     //   .subscribe(item =>
     //     this.categorias = item,
@@ -34,26 +34,26 @@ export class NavPrincipalComponent implements OnInit {
 
   }
 
-  private mockTeste() {
-    const categorias: Categoria[] = [
-      {
-          id: 1,
-          descricao: 'Tecnologia',
-          ativo: true
-      },
-      {
-          id: 2,
-          descricao: 'Educação',
-          ativo: true
-      },
-      {
-          id: 3,
-          descricao: 'Saúde',
-          ativo: false
-      }
-  ];
-  this.categorias = categorias
-  }
+  // private mockTeste() {
+  //   const categorias: Categoria[] = [
+  //     {
+  //         id: 1,
+  //         descricao: 'Tecnologia',
+  //         ativo: true
+  //     },
+  //     {
+  //         id: 2,
+  //         descricao: 'Educação',
+  //         ativo: true
+  //     },
+  //     {
+  //         id: 3,
+  //         descricao: 'Saúde',
+  //         ativo: false
+  //     }
+  // ];
+  // this.categorias = categorias
+  // }
 
   getProdutoByFiltro() {
     ///repsensar legal
