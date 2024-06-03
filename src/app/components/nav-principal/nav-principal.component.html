@@ -12,12 +12,15 @@
             <button class="signin-button">Entrar / Registrar</button>
         </div>
     </div>
-    <div class="menu" >
-        <mat-form-field appearance="fill">
-            <mat-label>Panel color</mat-label>
-            <mat-select *ngFor="let cat of categorias">
-              <mat-option value="red">Red</mat-option>
-            </mat-select>
-          </mat-form-field>
+    <div class="menu">
+        <div *ngFor="let cat of categorias">
+            <mat-form-field>
+                <mat-label>{{ cat.descricao }}</mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let subcat of cat.subCategorias" [value]="subcat.id">{{ subcat.descricao
+                        }}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
     </div>
 </div>
