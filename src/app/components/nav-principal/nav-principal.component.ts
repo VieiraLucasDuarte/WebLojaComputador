@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Categoria } from 'src/app/model/categoria';
 import { CategoriaService } from 'src/app/service/categoria.service';
+import { ProdutoService } from 'src/app/service/produto.service';
 
 @Component({
   selector: 'app-nav-principal',
@@ -16,6 +17,7 @@ export class NavPrincipalComponent implements OnInit {
 
   constructor(
     private categoriaService: CategoriaService,
+    private produtoService: ProdutoService
   ) { }
 
 
@@ -76,9 +78,7 @@ export class NavPrincipalComponent implements OnInit {
     this.categorias = categoria
   }
 
-  getProdutoByFiltro() {
-    ///repsensar legal
-
-    //rever como passa imagem com h2
+  getProdutoByFiltroCategoria() {
+    produtoService.
   }
 }
