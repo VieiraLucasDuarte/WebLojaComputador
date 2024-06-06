@@ -13,7 +13,6 @@ import { ProdutoService } from 'src/app/service/produto.service';
 export class NavPrincipalComponent implements OnInit {
 
   categorias: Categoria[] = [];
-  panelColor = new FormControl('red');
 
   constructor(
     private categoriaService: CategoriaService,
@@ -27,14 +26,10 @@ export class NavPrincipalComponent implements OnInit {
   }
 
   private getCategoria() {
-    this.mockTeste();
-    console.log(this.categorias)
-    // this.categoriaService.getCategorias()
-    //   .subscribe(item =>
-    //     this.categorias = item,
-    //   );
-
-
+    this.categoriaService.getCategorias()
+      .subscribe(item =>
+        this.categorias = item,
+      );
   }
 
   private mockTeste() {
@@ -78,7 +73,9 @@ export class NavPrincipalComponent implements OnInit {
     this.categorias = categoria
   }
 
-  getProdutoByFiltroCategoria() {
-    produtoService.
+  getProdutoByFiltroCategoria(idSub: number) {
+    this.produtoService.findProdutosBySub(idSub).subscribe(x => {
+      x
+    })
   }
 }

@@ -21,11 +21,11 @@ export class ProdutosPrincipalComponent implements OnInit {
   }
 
   private consultaProduto() {
-    // this.produtoService.getProdutos()
-    //   .subscribe(result =>
-    //     this.produtos = result,
-    //   )
-    this.mockTeste()
+    this.produtoService.findProdutos()
+      .subscribe(result =>
+        this.produtos = result,
+      )
+    // this.mockTeste()
   }
 
   private mockTeste() {

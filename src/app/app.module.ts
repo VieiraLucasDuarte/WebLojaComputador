@@ -13,6 +13,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProdutoComponent } from './home/produto/produto/produto.component';
 
 
 
@@ -22,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeComponent,
     NavPrincipalComponent,
     ProdutosPrincipalComponent,
+    ProdutoComponent,
   ],
   imports: [
     BrowserModule,

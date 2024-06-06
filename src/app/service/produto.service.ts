@@ -16,12 +16,12 @@ export class ProdutoService {
     constructor(private http: HttpClient) { }
 
 
-    getProdutos(): Observable<any> {
+    findProdutos(): Observable<any> {
         return this.http.get(this.apiURL + 'produto');
     }
 
-    // getProdutosBySub(subCategoria: number): Observable<Produto> {
-    //     return this.http.get(this.apiURL + `produto/${subCategoria}`)
-    // }
+    findProdutosBySub(idSub: number): Observable<any> {
+        return this.http.get(this.apiURL + `produto/subcategoria/${idSub}`);
+    }
 
 }
