@@ -1,4 +1,17 @@
-<div>
-	<app-nav-principal></app-nav-principal>
-    <h1>produtoinho</h1>
+<app-nav-principal></app-nav-principal>
+<div *ngIf="produto" class="container">
+    <div class="principal">
+        <div class="imgPrin">
+            <h1>{{produto.descricaoCurta}}</h1>
+            <img src="../../../assets/imgProduct/pcCompleto.jpg" class="card-img-top" alt="...">
+        </div>
+        <div>
+            <h3>Valor: R$ {{produto.valor}}</h3>
+            <h3>Quantidade Restante: {{produto.quantidade}}</h3>
+            <button class="btn btn-primary button">Comprar</button>
+        </div>
+    </div>
+    <div class="specProd">
+        <h4>{{produto.descricaoLonga}} </h4>
+    </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Categoria } from 'src/app/model/categoria';
 import { CategoriaService } from 'src/app/service/categoria.service';
 import { ProdutoService } from 'src/app/service/produto.service';
@@ -16,13 +16,13 @@ export class NavPrincipalComponent implements OnInit {
 
   constructor(
     private categoriaService: CategoriaService,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private router: Router
   ) { }
 
 
   ngOnInit() {
     this.getCategoria();
-
   }
 
   private getCategoria() {
@@ -31,6 +31,14 @@ export class NavPrincipalComponent implements OnInit {
         this.categorias = item,
       );
   }
+  login() {
+    this.router.navigate(['/login'])   
+  }
+
+
+
+
+  /////////////////////////////////////////////////////
 
   private mockTeste() {
     const categoria = [

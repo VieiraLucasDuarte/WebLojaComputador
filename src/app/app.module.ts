@@ -11,9 +11,11 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
-import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProdutoComponent } from './home/produto/produto/produto.component';
+import { CarrinhoComponent } from './carrinho/carrinho/carrinho.component';
+import { LoginComponent } from './pessoa/login/login.component';
 
 
 
@@ -24,6 +26,8 @@ import { ProdutoComponent } from './home/produto/produto/produto.component';
     NavPrincipalComponent,
     ProdutosPrincipalComponent,
     ProdutoComponent,
+    CarrinhoComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { Produto } from 'src/app/model/produto';
 import { ProdutoService } from 'src/app/service/produto.service';
 
@@ -13,6 +14,7 @@ export class ProdutosPrincipalComponent implements OnInit {
 
   constructor(
     private produtoService: ProdutoService,
+    private router: Router,
   ) { }
 
 
@@ -25,7 +27,10 @@ export class ProdutosPrincipalComponent implements OnInit {
       .subscribe(result =>
         this.produtos = result,
       )
-    // this.mockTeste()
+  }
+
+  produtoGeral(id: number) {
+    this.router.navigate(['/produto', id])    
   }
 
   private mockTeste() {

@@ -5,7 +5,7 @@
         <img src="../../../assets/imgProduct/pcCompleto.jpg" class="card-img-top" alt="...">
         <h5 class="card-title">{{ produto.nome }}</h5>
         <p class="card-text">{{ produto.descricaoCurta }}</p>
-        <a href="/produto" class="btn btn-primary button">Comprar</a>
+        <button class="btn btn-primary button" (click)="produtoGeral(produto.id)">Comprar</button>
       </div>
     </div>
   </div>
