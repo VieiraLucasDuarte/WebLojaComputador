@@ -35,6 +35,7 @@ export class ProdutoComponent implements OnInit{
   }
 
   Comprar() {
+    // chamar a compra do carrinho aqui // this.
     this.router.navigate(['/carrinho'])   
   }
 

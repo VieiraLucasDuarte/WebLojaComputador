@@ -1,0 +1,93 @@
+.container {
+    width: 60%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+  
+header {
+    background-color: #f7f7f7;
+    padding: 10px 0;
+}
+  
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+.logo {
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #333;
+}
+  
+nav input[type="text"] {
+    padding: 5px;
+    width: 40%;
+}
+  
+nav button {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+  
+nav .cart, .sign-in {
+    text-decoration: none;
+    color: #333;
+}
+  
+hr {
+    margin: 10px 0;
+}
+  
+.product-description {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+  
+.product-image p {
+    font-size: 1.2em;
+}
+  
+.product-price p {
+    text-align: right;
+}
+  
+.payment-form {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 5px;
+}
+  
+.payment-form h2 {
+    margin-top: 0;
+}
+  
+.payment-form label {
+    display: block;
+    margin: 10px 0 5px;
+}
+  
+.payment-form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+  
+.payment-form input[type="radio"] {
+    margin-right: 5px;
+}
+  
+.payment-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+  

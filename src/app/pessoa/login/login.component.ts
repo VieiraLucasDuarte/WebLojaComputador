@@ -1,33 +1,52 @@
-import { Component } from '@angular/core';
-import { Usuario } from 'src/app/model/usuario';
+import { Component, OnInit } from '@angular/core';
+import { LoginDTO, Usuario } from 'src/app/model/usuario';
 import { LoginService } from 'src/app/service/login.service';
+import { UsuarioService } from 'src/app/service/usuario.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
+  nomeTxt: string = '';
+  senhaTxt: string = '';
 
   UsuarioLogado!: Usuario;
-  constructor(private loginService: LoginService) {
+  constructor(
+    private loginService: LoginService,
+    private usuarioService: UsuarioService,
+    private location: Location) {
 
+  }
+  ngOnInit(): void {
   }
 
   logar() {
-    this.mockUsuario()
-    this.loginService.logado(this.UsuarioLogado)
+    const login: LoginDTO = {
+      nome: this.nomeTxt,
+      senha: this.senhaTxt
+    }
+    this.usuarioService.loginUsuario(login)
+      .subscribe(x => {
+        if (x != null) {
+          this.loginService.logado(x);
+          this.location.back();
+        }
+
+      })
   }
 
 
 
-  mockUsuario () {
+  mockUsuario() {
 
     const usuario: Usuario = {
       id: 1,
       nome: "lucas",
       senha: "123"
-    } 
+    }
 
     this.UsuarioLogado = usuario;
     //const produtosMock: Produto[] = [

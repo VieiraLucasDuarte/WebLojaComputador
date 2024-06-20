@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { LoginDTO, Usuario } from "../model/usuario";
 
 @Injectable({
     providedIn: 'root'
@@ -9,4 +10,12 @@ import { Observable } from "rxjs";
 
 export class UsuarioService {
 
+    private apiURL = 'http://localhost:8080/';
+
+    constructor(private http: HttpClient) { }
+
+
+    loginUsuario(login: LoginDTO) : Observable<any> {
+        return this.http.post(this.apiURL + "pessoa/login", login);
+    }
 }

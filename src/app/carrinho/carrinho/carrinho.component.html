@@ -1,1 +1,41 @@
-<p>carrinho works!</p>
+<app-nav-principal></app-nav-principal>
+<div class="container">
+    <section class="product-description">
+        <div class="product-image">
+            <p>Descrição principal do produto bem aqui</p>
+        </div>
+        <div class="product-price">
+            <p>Preço à vista</p>
+            <p>R$ 799,99</p>
+        </div>
+    </section>
+
+    <form class="payment-form">
+        <h2>Seus Dados</h2>
+        <label for="name">Nome:</label>
+        <input id="name" type="text">
+
+        <label for="cpf">CPF:</label>
+        <input id="cpf" type="text">
+
+        <label for="phone">Celular:</label>
+        <input id="phone" type="text">
+
+        <h2>Dados da Entrega</h2>
+        <label for="address">Endereço:</label>
+        <input id="address" type="text">
+
+        <label for="district">Bairro:</label>
+        <input id="district" type="text">
+
+        <label for="complement">Complemento:</label>
+        <input id="complement" type="text">
+
+        <h2>Forma de Pagamento</h2>
+        <label><input type="radio" name="payment" value="pix"> Pix</label>
+        <label><input type="radio" name="payment" value="credito"> Cartão Crédito</label>
+        <label><input type="radio" name="payment" value="debito"> Cartão Débito</label>
+
+        <button type="submit">Finalizar</button>
+    </form>
+</div>

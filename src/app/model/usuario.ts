@@ -4,3 +4,7 @@ export interface Usuario {
     senha: string,
 }
 
+export interface LoginDTO {
+    nome: string;
+    senha: string;
+}

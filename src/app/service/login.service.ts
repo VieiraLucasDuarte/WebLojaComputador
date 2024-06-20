@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject } from "rxjs";
+import { BehaviorSubject, Observable } from "rxjs";
 import { Usuario } from "../model/usuario";
 
 @Injectable({
@@ -11,5 +11,9 @@ export class LoginService {
 
     logado(usuario: Usuario) {
         this.usuario.next(usuario);
+    }
+
+    getLogin() {
+        return this.usuario.asObservable();
     }
 }
