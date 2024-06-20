@@ -19,7 +19,8 @@ export class ProdutosPrincipalComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.consultaProduto();
+    this.mockTeste();
+    // this.consultaProduto();
   }
 
   private consultaProduto() {
@@ -42,7 +43,8 @@ export class ProdutosPrincipalComponent implements OnInit {
         descricaoLonga: "O Smartphone XYZ possui uma tela de 6.5 polegadas, câmera de 48MP, 128GB de armazenamento interno e bateria de 4000mAh.",
         valor: 1999.99,
         promocao: true,
-        quantidade: 50
+        quantidade: 50,
+        imagem: "../../../assets/imgProduct/pcCompleto.jpg"
       },
       {
         id: 2,
@@ -51,7 +53,8 @@ export class ProdutosPrincipalComponent implements OnInit {
         descricaoLonga: "O Notebook ABC vem com processador Intel i7, 16GB de RAM, 512GB SSD e uma tela Full HD de 15.6 polegadas. Ideal para trabalho e entretenimento.",
         valor: 4999.99,
         promocao: false,
-        quantidade: 30
+        quantidade: 30,
+        imagem: "../../../assets/imgProduct/pcCompleto.jpg"
       },
       {
         id: 3,
@@ -60,7 +63,8 @@ export class ProdutosPrincipalComponent implements OnInit {
         descricaoLonga: "Fone de ouvido Bluetooth com cancelamento de ruído ativo, autonomia de 20 horas e som de alta definição. Confortável para uso prolongado.",
         valor: 299.99,
         promocao: true,
-        quantidade: 100
+        quantidade: 100,
+        imagem: "../../../assets/imgProduct/pcCompleto.jpg"
       },
       {
         id: 4,
@@ -69,7 +73,8 @@ export class ProdutosPrincipalComponent implements OnInit {
         descricaoLonga: "A TV 4K Ultra HD de 55 polegadas oferece uma experiência de visualização imersiva com cores vibrantes, HDR10+ e som Dolby Atmos. Conectividade Smart TV integrada.",
         valor: 3499.99,
         promocao: false,
-        quantidade: 20
+        quantidade: 20,
+        imagem: "../../../assets/imgProduct/pcCompleto.jpg"
       },
       {
         id: 5,
@@ -78,7 +83,8 @@ export class ProdutosPrincipalComponent implements OnInit {
         descricaoLonga: "Console de videogame com suporte para jogos em 4K, 1TB de armazenamento interno, e um catálogo extenso de jogos exclusivos. Inclui um controle sem fio.",
         valor: 2999.99,
         promocao: true,
-        quantidade: 25
+        quantidade: 25,
+        imagem: "../../../assets/imgProduct/pcCompleto.jpg"
       },
       {
         id: 6,
@@ -87,7 +93,8 @@ export class ProdutosPrincipalComponent implements OnInit {
         descricaoLonga: "O Smartphone XYZ possui uma tela de 6.5 polegadas, câmera de 48MP, 128GB de armazenamento interno e bateria de 4000mAh.",
         valor: 1999.99,
         promocao: true,
-        quantidade: 50
+        quantidade: 50,
+        imagem: "../../../assets/imgProduct/pcCompleto.jpg"
       },
       {
         id: 7,
@@ -96,7 +103,8 @@ export class ProdutosPrincipalComponent implements OnInit {
         descricaoLonga: "O Smartphone XYZ possui uma tela de 6.5 polegadas, câmera de 48MP, 128GB de armazenamento interno e bateria de 4000mAh.",
         valor: 1999.99,
         promocao: true,
-        quantidade: 50
+        quantidade: 50,
+        imagem: "../../../assets/imgProduct/pcCompleto.jpg"
       },
       {
         id: 8,
@@ -105,7 +113,8 @@ export class ProdutosPrincipalComponent implements OnInit {
         descricaoLonga: "O Smartphone XYZ possui uma tela de 6.5 polegadas, câmera de 48MP, 128GB de armazenamento interno e bateria de 4000mAh.",
         valor: 1999.99,
         promocao: true,
-        quantidade: 50
+        quantidade: 50,
+        imagem: "../../../assets/imgProduct/pcCompleto.jpg"
       },
     ];
     this.produtos = produtosMock
