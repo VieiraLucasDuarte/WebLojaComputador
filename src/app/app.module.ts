@@ -16,10 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProdutoComponent } from './home/produto/produto/produto.component';
 import { CarrinhoComponent } from './carrinho/carrinho/carrinho.component';
 import { LoginComponent } from './pessoa/login/login.component';
-import { UsuarioService } from './service/usuario.service';
 import { LoginService } from './service/login.service';
-
-
+import { CarrinhoService } from './service/carrinho.service';
 
 @NgModule({
   declarations: [
@@ -39,11 +37,14 @@ import { LoginService } from './service/login.service';
     MatMenuModule,
     MatFormFieldModule,
     MatSelectModule,
+    BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule
+    ReactiveFormsModule
   ],
-  providers: [LoginService],
+  providers: [
+    LoginService,
+    CarrinhoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

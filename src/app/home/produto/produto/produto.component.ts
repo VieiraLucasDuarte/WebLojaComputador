@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Produto } from 'src/app/model/produto';
+import { CarrinhoService } from 'src/app/service/carrinho.service';
 import { ProdutoService } from 'src/app/service/produto.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class ProdutoComponent implements OnInit{
   constructor(
     private route: ActivatedRoute,
     private prodRoute: ProdutoService,
+    private carrinhoService: CarrinhoService,
     private router: Router
   ) {}
 
@@ -34,8 +36,8 @@ export class ProdutoComponent implements OnInit{
     })
   }
 
-  Comprar() {
-    // chamar a compra do carrinho aqui // this.
+  Comprar(produtoSelect: Produto) {
+    this.carrinhoService.setItem(produtoSelect)
     this.router.navigate(['/carrinho'])   
   }
 

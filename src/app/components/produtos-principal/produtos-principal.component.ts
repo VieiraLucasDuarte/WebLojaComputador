@@ -19,8 +19,8 @@ export class ProdutosPrincipalComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.mockTeste();
-    // this.consultaProduto();
+    // this.mockTeste();
+    this.consultaProduto();
   }
 
   private consultaProduto() {
