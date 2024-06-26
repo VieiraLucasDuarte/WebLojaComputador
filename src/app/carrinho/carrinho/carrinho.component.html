@@ -10,7 +10,7 @@
         </div>
     </section>
 
-    <form class="payment-form">
+    <form class="payment-form" [formGroup]="pessoaForm">
         <h2>Seus Dados</h2>
         <label for="name">Nome:</label>
         <input id="name"  formControlName="nome" type="text">

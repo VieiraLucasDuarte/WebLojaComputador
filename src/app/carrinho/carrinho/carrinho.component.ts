@@ -6,6 +6,9 @@ import { Usuario } from 'src/app/model/usuario';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CarrinhoService } from 'src/app/service/carrinho.service';
 import { LoginService } from 'src/app/service/login.service';
+import { UsuarioService } from 'src/app/service/usuario.service';
+import { PedidoService } from 'src/app/service/pedido.service';
+import { CarrinhoDTO } from 'src/app/model/dto/carrinho';
 
 @Component({
   selector: 'app-carrinho',
@@ -20,6 +23,8 @@ export class CarrinhoComponent  implements OnInit {
 
   constructor(
     private loginService: LoginService,
+    private pedidoService: PedidoService,
+    private usuService: UsuarioService,
     private carrinhoService: CarrinhoService,
     private router: Router,
     private fb: FormBuilder
@@ -44,9 +49,13 @@ export class CarrinhoComponent  implements OnInit {
   }
   
   finalizar() {
-    console.log(this.pessoaForm.value)
-    // const pessoa: PessoaDTO
-
+    let pessoa = this.criarPessoaDto();
+    console.log(pessoa)
+    this.usuService.createdPessoa(pessoa)
+    .subscribe(x => {
+      //chamar o create aqui    
+      // this.pedidoService.
+    })
   }
 
   verificarLogado() {
@@ -70,5 +79,26 @@ export class CarrinhoComponent  implements OnInit {
       console.log(x)
       this.Produto = x
     })
+  }
+
+  criarPessoaDto() {
+    const pessoa: PessoaDTO = {
+      nome: this.pessoaForm.value.nome,
+      cpf: this.pessoaForm.value.cpf,
+      celular: this.pessoaForm.value.celular,
+      endereco: this.pessoaForm.value.endereco,
+      bairro: this.pessoaForm.value.bairro,
+      complemento: this.pessoaForm.value.complemento
+    };
+
+    return pessoa;
+  }
+
+  criarCarrinho() {
+    // const produto: CarrinhoDTO = {
+    //   idPessoa: this.Usuario.id,
+    //   //idProduto: this.
+    //   // quantidade
+    // } 
   }
 }

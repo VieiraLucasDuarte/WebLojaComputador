@@ -2,11 +2,11 @@ import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { LoginDTO, Usuario } from "../model/usuario";
+import { PessoaDTO } from "../model/dto/pessoa";
 
 @Injectable({
     providedIn: 'root'
 })
-
 
 export class UsuarioService {
 
@@ -17,5 +17,9 @@ export class UsuarioService {
 
     loginUsuario(login: LoginDTO) : Observable<any> {
         return this.http.post(this.apiURL + "pessoa/login", login);
+    }
+
+    createdPessoa(pessoa: PessoaDTO) : Observable<any> {
+        return this.http.post(this.apiURL + "pessoa/criar", pessoa);
     }
 }
