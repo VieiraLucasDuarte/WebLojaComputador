@@ -7,7 +7,7 @@ import { LoginComponent } from './pessoa/login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'produto/:id', component: ProdutoComponent },
+  { path: 'produto', component: ProdutoComponent },
   { path: 'carrinho', component: CarrinhoComponent },
   { path: 'login', component: LoginComponent }
 ];

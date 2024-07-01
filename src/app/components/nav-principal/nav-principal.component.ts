@@ -22,7 +22,8 @@ export class NavPrincipalComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getCategoria();
+    this.mockTeste();
+    // this.getCategoria();
   }
 
   private getCategoria() {
@@ -32,11 +33,11 @@ export class NavPrincipalComponent implements OnInit {
       );
   }
   login() {
-    this.router.navigate(['/login'])   
+    this.router.navigate(['/login'])
   }
 
   carrinho() {
-this.router.navigate(['/carrinho'])
+    this.router.navigate(['/carrinho'])
   }
 
 
@@ -48,38 +49,60 @@ this.router.navigate(['/carrinho'])
     const categoria = [
       {
         id: 1,
-        descricao: 'Categoria 1',
+        descricao: 'Computadores',
         ativo: true,
         subCategorias: [
           {
             id: 1,
-            descricao: 'Subcategoria 1',
+            descricao: 'Pronta entrega',
             ativo: true
           },
           {
             id: 2,
-            descricao: 'Subcategoria 2',
+            descricao: 'Monte seu PC',
             ativo: false
           }
         ]
       } as Categoria,
       {
         id: 2,
-        descricao: 'Categoria 2',
+        descricao: 'Hardware',
         ativo: false,
         subCategorias: [
           {
             id: 3,
-            descricao: 'Subcategoria 3',
+            descricao: 'Processadores',
             ativo: true
           },
           {
             id: 4,
-            descricao: 'Subcategoria 4',
+            descricao: 'Memória Ram',
+            ativo: true
+          },
+          {
+            id: 4,
+            descricao: 'Placa de Vídeo',
+            ativo: true
+          },
+          {
+            id: 4,
+            descricao: 'Placa Mãe',
             ativo: true
           }
         ]
-      } as Categoria
+      } as Categoria,
+      {
+        id: 2,
+        descricao: 'Periféricos',
+        ativo: false,
+        subCategorias: [
+          {
+            id: 3,
+            descricao: 'Headset',
+            ativo: true
+          },
+        ]
+      } as Categoria,
     ]
 
     this.categorias = categoria

@@ -18,6 +18,7 @@ import { CarrinhoComponent } from './carrinho/carrinho/carrinho.component';
 import { LoginComponent } from './pessoa/login/login.component';
 import { LoginService } from './service/login.service';
 import { CarrinhoService } from './service/carrinho.service';
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { CarrinhoService } from './service/carrinho.service';
     MatSelectModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule
   ],
   providers: [
     LoginService,

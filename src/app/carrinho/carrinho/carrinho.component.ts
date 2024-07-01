@@ -9,6 +9,8 @@ import { LoginService } from 'src/app/service/login.service';
 import { UsuarioService } from 'src/app/service/usuario.service';
 import { PedidoService } from 'src/app/service/pedido.service';
 import { CarrinhoDTO } from 'src/app/model/dto/carrinho';
+import { MatSnackBar } from "@angular/material/snack-bar";
+
 
 @Component({
   selector: 'app-carrinho',
@@ -27,7 +29,8 @@ export class CarrinhoComponent  implements OnInit {
     private usuService: UsuarioService,
     private carrinhoService: CarrinhoService,
     private router: Router,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private notificacao: MatSnackBar,
   ) {
     this.pessoaForm = this.fb.group({
       nome: ['', Validators.required],
@@ -40,7 +43,6 @@ export class CarrinhoComponent  implements OnInit {
   }
   ngOnInit(): void {
     let verifica = this.verificarLogado();
-    console.log("aqui ")
     if(verifica == false)
       this.router.navigate(['login']);
 
@@ -50,12 +52,11 @@ export class CarrinhoComponent  implements OnInit {
   
   finalizar() {
     let pessoa = this.criarPessoaDto();
-    console.log(pessoa)
     this.usuService.createdPessoa(pessoa)
     .subscribe(x => {
-      //chamar o create aqui    
-      // this.pedidoService.
     })
+    this.router.navigate(['']);
+    alert("Compra Efetuada");
   }
 
   verificarLogado() {

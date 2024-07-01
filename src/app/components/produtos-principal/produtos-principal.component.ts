@@ -19,8 +19,8 @@ export class ProdutosPrincipalComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // this.mockTeste();
-    this.consultaProduto();
+    this.mockTeste();
+    // this.consultaProduto();
   }
 
   private consultaProduto() {
@@ -31,7 +31,8 @@ export class ProdutosPrincipalComponent implements OnInit {
   }
 
   produtoGeral(id: number) {
-    this.router.navigate(['/produto', id])    
+    console.log('ahamm')
+    this.router.navigate(['/produto'])    
   }
 
   private mockTeste() {

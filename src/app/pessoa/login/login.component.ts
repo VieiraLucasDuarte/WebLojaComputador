@@ -28,17 +28,18 @@ export class LoginComponent implements OnInit{
       nome: this.nomeTxt,
       senha: this.senhaTxt
     }
-    this.usuarioService.loginUsuario(login)
-      .subscribe(x => {
-        if (x != null) {
-          this.loginService.logado(x);
-          this.location.back();
-        }
+    this.mockUsuario();
+    this.loginService.logado(this.UsuarioLogado);
+    this.location.back();
+    // this.usuarioService.loginUsuario(login)
+    //   .subscribe(x => {
+    //     if (x != null) {
+    //       this.loginService.logado(x);
+    //       this.location.back();
+    //     }
 
-      })
+    //   })
   }
-
-
 
   mockUsuario() {
 
@@ -47,9 +48,7 @@ export class LoginComponent implements OnInit{
       nome: "lucas",
       senha: "123"
     }
-
     this.UsuarioLogado = usuario;
-    //const produtosMock: Produto[] = [
   }
 }
 

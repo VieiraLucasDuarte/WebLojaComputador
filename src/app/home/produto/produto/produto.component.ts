@@ -21,10 +21,12 @@ export class ProdutoComponent implements OnInit{
   ) {}
 
   ngOnInit(): void {
-    let numero = this.route.snapshot.paramMap.get('id');
-    if(numero == undefined) return;
-    this.codProduto = parseInt(numero);
-    this.getProduto(this.codProduto)
+    this.mockProduto()
+    console.log('to aq')
+    // let numero = this.route.snapshot.paramMap.get('id');
+    // if(numero == undefined) return;
+    // this.codProduto = parseInt(numero);
+    // this.getProduto(this.codProduto)
   }
 
 
@@ -38,7 +40,22 @@ export class ProdutoComponent implements OnInit{
 
   Comprar(produtoSelect: Produto) {
     this.carrinhoService.setItem(produtoSelect)
+    console.log(produtoSelect)
     this.router.navigate(['/carrinho'])   
   }
 
+  mockProduto() {
+    const produtosMock: Produto =  {
+        id: 1,
+        nome: "Smartphone XYZ",
+        descricaoCurta: "Smartphone com tela de 6.5 polegadas",
+        descricaoLonga: "O Smartphone XYZ possui uma tela de 6.5 polegadas, câmera de 48MP, 128GB de armazenamento interno e bateria de 4000mAh.",
+        valor: 1999.99,
+        promocao: true,
+        quantidade: 50,
+        imagem: "../../../assets/imgProduct/pcCompleto.jpg"
+      }
+
+      this.produto = produtosMock
+  }
 }
