@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit{
 
   logar() {
     const login: LoginDTO = {
-      nome: this.nomeTxt,
+      login: this.nomeTxt,
       senha: this.senhaTxt
     }
     this.usuarioService.loginUsuario(login)

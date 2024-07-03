@@ -5,6 +5,6 @@ export interface Usuario {
 }
 
 export interface LoginDTO {
-    nome: string;
+    login: string;
     senha: string;
 }

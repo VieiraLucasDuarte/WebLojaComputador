@@ -3,7 +3,15 @@
     margin: 0 auto;
     font-family: Arial, sans-serif;
 }
-  
+
+.img {
+    width: 100px;
+    height: 40px;
+}
+
+.text {
+    height: 40px;
+}
 header {
     background-color: #f7f7f7;
     padding: 10px 0;
@@ -50,6 +58,8 @@ hr {
 }
   
 .product-image p {
+    display: flex;
+    flex-direction: row;
     font-size: 1.2em;
 }
   

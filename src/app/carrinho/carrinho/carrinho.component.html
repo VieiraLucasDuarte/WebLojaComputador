@@ -1,19 +1,24 @@
 <app-nav-principal></app-nav-principal>
 <div class="container" *ngIf="Produto">
-    <section class="product-description">
+    <div class="product-description">
         <div class="product-image">
-            <p>{{Produto.descricaoLonga}}</p>
+            <div class="img">
+                <img src="{{Produto.imagem}}" class="card-img-top" alt="...">
+            </div>
+            <div class="text">
+                <p>{{Produto.descricaoLonga}}</p>
+            </div>
         </div>
         <div class="product-price">
             <p>Preço à vista</p>
             <p>{{Produto.valor}}</p>
         </div>
-    </section>
+    </div>
 
     <form class="payment-form" [formGroup]="pessoaForm">
         <h2>Seus Dados</h2>
         <label for="name">Nome:</label>
-        <input id="name"  formControlName="nome" type="text">
+        <input id="name" formControlName="nome" type="text">
 
         <label for="cpf">CPF:</label>
         <input id="cpf" formControlName="cpf" type="text">

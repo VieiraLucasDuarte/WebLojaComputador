@@ -52,10 +52,9 @@ export class CarrinhoComponent  implements OnInit {
     let pessoa = this.criarPessoaDto();
     console.log(pessoa)
     this.usuService.createdPessoa(pessoa)
-    .subscribe(x => {
-      //chamar o create aqui    
-      // this.pedidoService.
-    })
+    let carrinho = this.criarPedido();
+    if(carrinho != undefined)
+      this.pedidoService.createdPedido(carrinho);
   }
 
   verificarLogado() {
@@ -69,20 +68,19 @@ export class CarrinhoComponent  implements OnInit {
         verifica = true
       }
     })
-    console.log('fim')
     return verifica;
   }
 
   PreencheProduto() {
     this.carrinhoService.getItemCarrinho()
     .subscribe(x => {
-      console.log(x)
       this.Produto = x
     })
   }
 
   criarPessoaDto() {
     const pessoa: PessoaDTO = {
+      id: this.Usuario.id,
       nome: this.pessoaForm.value.nome,
       cpf: this.pessoaForm.value.cpf,
       celular: this.pessoaForm.value.celular,
@@ -94,11 +92,14 @@ export class CarrinhoComponent  implements OnInit {
     return pessoa;
   }
 
-  criarCarrinho() {
-    // const produto: CarrinhoDTO = {
-    //   idPessoa: this.Usuario.id,
-    //   //idProduto: this.
-    //   // quantidade
-    // } 
+  criarPedido() {
+    if(this.Produto == undefined) return;
+    const carrinho: CarrinhoDTO = {
+      idPessoa: this.Usuario.id,
+      idProduto: this.Produto?.id,
+      quantidade: this.Produto.quantidade,
+      valor: this.Produto.valor
+    } 
+    return carrinho;
   }
 }
