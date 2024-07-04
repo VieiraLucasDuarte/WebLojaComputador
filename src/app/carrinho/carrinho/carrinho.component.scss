@@ -6,11 +6,11 @@
 
 .img {
     width: 100px;
-    height: 40px;
+    height: auto;
 }
 
 .text {
-    height: 40px;
+    height: 20px;
 }
 header {
     background-color: #f7f7f7;
@@ -54,17 +54,19 @@ hr {
 .product-description {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 20px 0;
 }
   
-.product-image p {
+.product-image {
     display: flex;
-    flex-direction: row;
-    font-size: 1.2em;
+    align-items: center;
 }
   
-.product-price p {
+.product-price{
+    padding-top: 1px;
     text-align: right;
+    margin-left: 20px;
 }
   
 .payment-form {

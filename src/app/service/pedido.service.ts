@@ -1,6 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { CarrinhoDTO } from "../model/dto/carrinho";
+import { Observable } from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -11,8 +12,12 @@ export class PedidoService {
 
     constructor(private http: HttpClient) { }
 
-    createdPedido(carrinho: CarrinhoDTO) {
-        return this.http.post(this.apiURL + "compra", carrinho);
+    createdPedido(carrinho: CarrinhoDTO) : Observable<any> {
+        return this.http.put(this.apiURL + `compra/create`, carrinho);
+    }
+
+    getPedido() : Observable<any> {
+        return this.http.get(this.apiURL + `compra/pedido`)
     }
 
 }

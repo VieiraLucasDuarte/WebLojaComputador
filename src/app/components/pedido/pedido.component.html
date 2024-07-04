@@ -1,0 +1,11 @@
+<app-nav-principal></app-nav-principal>
+<div class="titulo">
+    <h2>Pedidos</h2>
+</div>
+<div class="container">
+    <div class="row" *ngFor="let compra of compras">
+        <div class="box">{{compra.produto.nome}}</div>
+        <div class="box">Valor do Produto:  R$ {{compra.produto.valor}}. Quantidade: {{compra.quantidade}}</div>
+        <div class="small-box"></div>
+    </div>
+</div>

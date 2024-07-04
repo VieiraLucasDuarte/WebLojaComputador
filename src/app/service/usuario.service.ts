@@ -1,25 +1,25 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, catchError, tap, throwError } from "rxjs";
 import { LoginDTO, Usuario } from "../model/usuario";
 import { PessoaDTO } from "../model/dto/pessoa";
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 
 export class UsuarioService {
 
-    private apiURL = 'http://localhost:8080/';
+  private apiURL = 'http://localhost:8080/';
 
-    constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
 
-    loginUsuario(login: LoginDTO) : Observable<any> {
-        return this.http.post(this.apiURL + "pessoa/login", login);
-    }
+  loginUsuario(login: LoginDTO): Observable<any> {
+    return this.http.post(this.apiURL + "pessoa/login", login);
+  }
 
-    createdPessoa(pessoa: PessoaDTO) : Observable<any> {
-        return this.http.post(this.apiURL + "pessoa/criar", pessoa);
-    }
+  createdPessoa(pessoa: PessoaDTO): Observable<any> {
+    return this.http.post(this.apiURL + "pessoa/criar", pessoa)
+  }
 }

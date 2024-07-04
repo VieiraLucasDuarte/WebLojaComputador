@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.box {
+    flex: 1;
+    border: 2px solid black;
+    height: 50px;
+    text-align: left;
+    font-size: 15px;
+    padding-top: 10px;
+}
+
+.small-box {
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    background-color: green;
+}
+
+.dashed {
+    border: 2px dashed black;
+}
+
+.titulo {
+    display: flex;
+    justify-content: center;
+}

@@ -20,6 +20,7 @@ export class CarrinhoComponent  implements OnInit {
   Usuario!: Usuario
   Produto: Produto | undefined;
   pessoaForm: FormGroup;
+  pessoaEnviar!: PessoaDTO
 
   constructor(
     private loginService: LoginService,
@@ -49,12 +50,16 @@ export class CarrinhoComponent  implements OnInit {
   }
   
   finalizar() {
-    let pessoa = this.criarPessoaDto();
-    console.log(pessoa)
-    this.usuService.createdPessoa(pessoa)
+    console.log('clik')
+    this.criarPessoaDto();
+    this.usuService.createdPessoa(this.pessoaEnviar)
     let carrinho = this.criarPedido();
+    console.log(carrinho)
     if(carrinho != undefined)
       this.pedidoService.createdPedido(carrinho);
+    
+    this.router.navigate(['']);
+    alert("Compra Efetuada");
   }
 
   verificarLogado() {
@@ -88,8 +93,7 @@ export class CarrinhoComponent  implements OnInit {
       bairro: this.pessoaForm.value.bairro,
       complemento: this.pessoaForm.value.complemento
     };
-
-    return pessoa;
+  this.pessoaEnviar = pessoa
   }
 
   criarPedido() {

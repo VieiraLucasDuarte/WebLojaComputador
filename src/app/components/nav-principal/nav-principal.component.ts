@@ -36,9 +36,13 @@ export class NavPrincipalComponent implements OnInit {
   }
 
   carrinho() {
-this.router.navigate(['/carrinho'])
+    this.router.navigate(['/pedido'])
   }
 
+
+  redirecionar() {
+    this.router.navigate(['/'])
+  }
 
 
 
